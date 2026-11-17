@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" data-m3-primary="#0077b6">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SipBuddy</title>
+<meta name="description" content="A friendly water reminder that only goes away once the camera sees you drinking. Sips are counted on your device; nothing is uploaded.">
+<meta name="theme-color" content="#f4f5f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#10131b" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="SipBuddy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="kolam/tokens.css">
+<link rel="stylesheet" href="kolam/kolam.css">
+<link rel="stylesheet" href="app.css">
+<script src="kolam/m3/kolam-m3.js"></script>
+<script src="kolam/ios/kolam-ios.js"></script>
+<link rel="stylesheet" href="kolam/m3/kolam-m3.css">
+<link rel="stylesheet" href="kolam/ios/kolam-ios.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="app-header">
+  <div class="bar">
+    <a class="brand" href="#/" aria-label="SipBuddy, Today"><img src="icons/icon-192.png" alt="" width="32" height="32"><span>SipBuddy</span></a>
+    <nav class="top-tabs" aria-label="Sections">
+      <a href="#/" data-route="today">Today</a>
+      <a href="#/stats" data-route="stats">Statistics</a>
+      <a href="#/settings" data-route="settings">Settings</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap" tabindex="-1"></main>
+<nav class="k-bottomnav app-tabs" aria-label="Sections">
+  <a href="#/" data-route="today"><span class="k-pip"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3 3.6 6 7.3 6 10.6a6 6 0 0 1-12 0c0-3.3 3-7 6-10.6z"/></svg></span><span>Today</span></a>
+  <a href="#/stats" data-route="stats"><span class="k-pip"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M10 20V5M15 20v-8M20 20V8"/></svg></span><span>Statistics</span></a>
+  <a href="#/settings" data-route="settings"><span class="k-pip"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></span><span>Settings</span></a>
+</nav>
+
+<div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="ov-title" hidden></div>
+<dialog id="dlg" class="k-dialog"></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<p class="k-sr-only" id="say" aria-live="assertive"></p>
+<noscript><p class="wrap">SipBuddy needs JavaScript to run.</p></noscript>
+<script type="module" src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator && location.protocol === 'https:') addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+</script>
+</body>
+</html>
