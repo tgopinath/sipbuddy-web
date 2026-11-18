@@ -21,3 +21,12 @@ The same product as the native Mac app (`~/Documents/SipBuddy`, repo tgopinath/S
 
 ## Run locally
 `python3 -m http.server 5370` (launch config "sipbuddy-web"), then http://localhost:5370. Camera access needs localhost or HTTPS.
+
+## Portfolio assets
+- `prototype/mobile.html`: phone frame around the live app; `prototype/iphone.html` + `prototype/iphone/`: iPhone Simulator screenshots (shell repo tgopinath/SipBuddy-iOS).
+- `prototype/shots/`: card screenshots, made by `node tools/shots.mjs` (headless Chrome, `?demo`).
+
+## Live
+- Web: https://sipbuddy-seven.vercel.app (Vercel project `sipbuddy`, deploys on push to main)
+- Android: https://github.com/tgopinath/sipbuddy-web/releases/latest/download/sipbuddy.apk (Capacitor shell, `~/Documents/android-wrappers/sipbuddy`)
+- iPhone: SwiftUI shell, https://github.com/tgopinath/SipBuddy-iOS
